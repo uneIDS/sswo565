@@ -14,10 +14,15 @@
 <tw-storydata name="565 Module 7 Interagency Branching" startnode="1" creator="Twine" creator-version="2.3.7" ifid="A49103D8-38EC-4215-9926-EE14307461AE" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
 background-color: #EEE;
 color: #5e626b;
-font-family: "Open Sans";
+font-family: "Arial";
+
 }
 tw-sidebar {
 display: none;
+}
+p {
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="414,190" size="100,100">{(set: $name to (prompt:&quot;What is your name?&quot;, &quot;&quot;))}
@@ -60,30 +65,40 @@ At the Jane Addams Children and Family Center Day School, clinicians work with a
 (set: $allocation to it +1)
 }
 You reach out to each of the parties with a request for a meeting. 
-You indicate several options for meetings, including remote call-in. Despite your best efforts, it looks like on any given day/time, you can get no more than 4 people to attend.
+
+You indicate several options for meetings, including remote call-in. Despite your best efforts, it looks like on any given day/time, you can get no more than 4 people to attend. Ugh!
+
 Which ones would you decide to be the most essential to this case?
 
 [[Read each person&#39;s job description|Clinician]]
 
-(link-reveal: &quot;Jane Addams Children and Family Center Day School Clinician&quot;)[(if: $count &lt; 4)
+(link: &quot;After you have read the job descriptions, are you ready to pick?&quot;)+(transition: &quot;dissolve&quot;)+(transition-time: 2s)
+
+[(link-reveal: &quot;Jane Addams Children and Family Center Day School Clinician&quot;)[(if: $count &lt; 4)
+
 [(set: $prof to it + (a: &quot;Clinician&quot; ))(set: $count to it + 1)
 //You have added the clinician to the meeting.//](else:)[//The clinician is not able to make the meeting//]]
+
 (link-reveal: &quot;Group home director&quot;)[(if: $count &lt; 4)
 [(set: $prof to it + (a: &quot;Group home director&quot; ))(set: $count to it + 1) 
 //You have added the group home director to the meeting.//](else:)[//The group home director is not able to make the meeting//]]
+
 (link-reveal: &quot;DCF Case Manager (also the area supervisor)&quot;)[(if: $count &lt; 4)
 [(set: $prof to it + (a: &quot;DCF Case Manager&quot; ))(set: $count to it + 1) 
 //You have added the DCF case manager to the meeting.//](else:)[//The DCF case manager is not able to make the meeting//]]
+
 (link-reveal: &quot;Guardian Ad Litem&quot;)[(if: $count &lt; 4)
 [(set: $prof to it + (a: &quot;Guardian ad litem&quot; ))(set: $count to it + 1) 
 //You have added the guardian ad litum to the meeting.//](else:)[//The guardian ad litem is not able to make the meeting//]]
+
 (link-reveal: &quot;DMH Case Manager&quot;)[(if: $count &lt; 4)
 [(set: $prof to it + (a: &quot;DMH Case Manager&quot; ))(set: $count to it + 1) 
 //You have added the DMH case manager to the meeting.//](else:)[//The DMH case manager is not able to make the meeting//]]
+
 (link-reveal: &quot;Outpatient Clinician&quot;)[(if: $count &lt; 4)
 [(set: $prof to it + (a: &quot;Outpatient Clinician&quot; ))(set: $count to it + 1) 
 //You have added the outpatient clinician to the meeting.//](else:)[//The outpatient clinician is not able to make the meeting//]]
-(event: when $count is 4)[[[You&#39;ve selected your meeting participants-&gt;4 chosen]]]</tw-passagedata><tw-passagedata pid="7" name="Group home director" tags="" position="1124,608" size="100,100">
+(event: when $count is 4)[[[You&#39;ve selected your meeting participants-&gt;4 chosen]]] ]</tw-passagedata><tw-passagedata pid="7" name="Group home director" tags="" position="1124,608" size="100,100">
 ###PURPOSE &amp; SCOPE
 
 The Director directs the daily operations of one group home for transition age youth aged 8 to 15 years who are in the custody of the Department of Children and Families. 
@@ -166,17 +181,19 @@ A SOCIAL WORKER provides the necessary services to help children in need includi
 [[DMH Case Manager -&gt;DMH Case Manager]] 
 [[Outpatient Clinician -&gt;Outpatient Clinician]] 
 [[I&#39;m ready to pick -&gt; Reach out]] </tw-passagedata><tw-passagedata pid="9" name=" GAL" tags="" position="1282,608" size="100,100">https://ptla.org/what-guardian-ad-litem 
-What is a Guardian ad Litem?
+**What is a Guardian ad Litem?**
+
 Note: This article is about guardian ad litems in the state of Maine. This role, and the process around a guardian ad litem may be different in other states.
 
-A “guardian ad litem” (GAL) is a person the court appoints to investigate what solutions would be in the “best interests of a child.” Here, we are talking about a GAL in a divorce or parental rights and responsibilities case. The GAL will look into the family situation and advise the court on things like:
+*A “guardian ad litem” (GAL)* is a person the court appoints to investigate what solutions would be in the “best interests of a child.” Here, we are talking about a GAL in a divorce or parental rights and responsibilities case. The GAL will look into the family situation and advise the court on things like:
 
-where the children should live most of the time
-whether the child is being harmed by a parent’s substance abuse
-what contact the child should have with a parent
-Learn more about Divorce and Parental RIghts and Responsibilities.
+- where the children should live most of the time
+- whether the child is being harmed by a parent’s substance abuse
+- what contact the child should have with a parent
 
-What does a GAL do?
+
+**What does a GAL do?**
+
 That depends on the Court’s order. You can read the form the Court will use to write the order.
 
 Sometimes the order is very broad. The GAL could be asked to look at the child’s overall situation and make general recommendations about things like parental rights. But usually, the Court will issue a “limited-purpose appointment.” This means they ask the GAL to look into just one or two issues like a parent’s record of substance abuse or a parent’s current ability to make rational decisions about a child’s care, based on a current mental health care provider’s information.
@@ -195,10 +212,10 @@ This is the standard the GAL and the Court have to use when they make decisions 
 
 Other factors include:
 
-the child’s current relationship with parents,
-the stability of each parent’s living situation, and
-the parent’s ability to cooperate or learn to cooperate in caring for the child.
-There are many other factors they will consider. You can read the &quot;best interest of the child&quot; law here, at section 3.
+- the child’s current relationship with parents,
+- the stability of each parent’s living situation, and
+- the parent’s ability to cooperate or learn to cooperate in caring for the child.
+- There are many other factors they will consider. You can read the &quot;best interest of the child&quot; law here, at section 3.
 
 Overall, the GAL must look at all the different factors that could affect the parent-child relationship. Then they make a recommendation. The GAL’s recommendation should protect the child&#39;s right to have a meaningful, strong relationship with their parents, in a way that makes sense and is in the child’s “best interests.”
 
@@ -260,7 +277,10 @@ You have decided on the composition of the team for the meeting. What&#39;s next
 [[Reach out to the attendees with a request for a brief perspective on the case | Perspectives]]
 </tw-passagedata><tw-passagedata pid="14" name=" Calendar Reminder" tags="" position="197,979" size="100,100">{(set: $allocation to it + 1)}
 Okay, you&#39;ve set a reminder. [[What do you want to do next? -&gt;4 chosen]] </tw-passagedata><tw-passagedata pid="15" name=" Perspectives" tags="" position="922,763" size="100,100">{(set: $communication to it +1)}
-Perspective of attendees to the meeting:
+This is what the attendees sent you. 
+
+Perspectives of the attendees to the meeting:
+
 {
 (if: $prof contains &quot;Group home director&quot;)[[[Group Home Director Perspective -&gt;GH Director Perspective]]]&lt;br&gt;
 (if: $prof contains &quot;DCF Case Manager&quot;)[[[DCF Case Manager Perspective -&gt;DCF Case Manager Perspective]]]&lt;br&gt;
@@ -269,6 +289,7 @@ Perspective of attendees to the meeting:
 (if: $prof contains &quot;Outpatient Clinician&quot;)[[[Outpatient Clinician Perspective -&gt;Outpatient Clinician Perspective]]]&lt;br&gt; 
 (if: $prof contains &quot;Clinician&quot;)[[[Clinician Perspective-&gt;Clinician Perspective]]]&lt;br&gt;
 }
+
 (if: (history:) contains &quot;Meeting Prep&quot;)[You are as prepared as you are going to be. [[Head to the meeting -&gt; Agenda]]](else:)[[[Next Step -&gt;Next Step]]] </tw-passagedata><tw-passagedata pid="16" name="GH Director Perspective" tags="" position="638,1039" size="100,100">{(set: $knowledge to it + 1)}
 &lt;center&gt;&lt;img src=&quot;https://padlet-uploads.storage.googleapis.com/706147226/cbc30daf3a30769a952a74153997f069/henrique_jacob_CJMyJyeE7nY_unsplash.jpg&quot; width=&quot;50%&quot; height=&quot;auto&quot;&gt; &lt;/center&gt;
 Need to rewrite to sound more appropriate to the role: 
@@ -280,9 +301,8 @@ Need to rewrite to sound more appropriate to the role:
 &quot;
 
 [[Return -&gt; Perspectives]] </tw-passagedata><tw-passagedata pid="18" name="GAL Perspective" tags="" position="551,896" size="100,100">{(set: $knowledge to it + 1)}
-&lt;center&gt;&lt;img src=&quot;https://padlet-uploads.storage.googleapis.com/706147226/d2600ed8984060ffb38ff82c6a4c2d25/jeff_cadestin_Q86tbIEpXss_unsplash.jpg&quot; width=&quot;50%&quot; height=&quot;auto&quot;&gt;&lt;/center&gt;
-&quot;As the GAL your role is to ensure that Sam has the safest living situation possible. You are only concerned with her interests, not the interests of others. You feel strongly that the current group home is not providing the level care they claim to and that Sam is at risk. You believe that the other home is better suited for her even though it will mean disruption in her visitation with Lucy. You actually are concerned that Lucy&#39;s current downward spiral could be destabilizing for Sam. You&#39;ve recently pushed for the stopping of visits and only supervised phone calls. You are frustrated with DCF and DMH for playing &#39;funding games&#39; with Sam&#39;s care. You don&#39;t understand why they can&#39;t make this work, you know that this is all just a shuffle board who funds which beds and that exchanges can be made. 
-&quot;
+&lt;center&gt;&lt;img src=&quot;https://drive.google.com/file/d/1PmYO2ik04SnJH-zQxXM_uUr68KKP0Omg&quot; width=&quot;50%&quot; height=&quot;auto&quot;&gt;&lt;/center&gt;
+As the GAL your role is to ensure that Sam has the safest living situation possible. You are only concerned with her interests, not the interests of others. You feel strongly that the current group home is not providing the level care they claim to and that Sam is at risk. You believe that the other home is better suited for her even though it will mean disruption in her visitation with Lucy. You actually are concerned that Lucy&#39;s current downward spiral could be destabilizing for Sam. You&#39;ve recently pushed for the stopping of visits and only supervised phone calls. You are frustrated with DCF and DMH for playing &#39;funding games&#39; with Sam&#39;s care. You don&#39;t understand why they can&#39;t make this work, you know that this is all just a shuffle board who funds which beds and that exchanges can be made.
 
 [[Return -&gt; Perspectives]] </tw-passagedata><tw-passagedata pid="19" name="DMH Case Manager Perspective" tags="" position="780,1092" size="100,100">{(set: $knowledge to it + 1)}
 &lt;center&gt;&lt;img src=&quot;https://padlet-uploads.storage.googleapis.com/706147226/d83e5466a01274bea08cdf43e878f92e/ryan_hoffman_v7Jja2ChN6s_unsplash.jpg&quot; width=&quot;50%&quot; height=&quot;auto&quot;&gt;&lt;/center&gt;
@@ -295,9 +315,11 @@ Need to rewrite to sound more appropriate to the role:
 &quot;
 
 [[Return -&gt; Perspectives]] </tw-passagedata><tw-passagedata pid="21" name="Next Step" tags="" position="1115,752" size="100,100">Hmmm... these people are definitely professionals. They articulated clearly their perspective on the case. What do you do next?
+
 [[Carefully review Sam&#39;s case again and conclude that you should trust the system, no meeting is necessary|Cancel Meeting]]
 
 [[These people communicate well and willingly by email, save everyone some time, no need to meet | Do it by email]]
+
 [[The meeting is scheduled, so might as well keep it!|Keep Meeting]]</tw-passagedata><tw-passagedata pid="22" name="Cancel Meeting" tags="" position="1128,904" size="100,100">{(set: $communication to it - 2)
 (set: $allocation to it - 1)
 }
@@ -309,28 +331,32 @@ Now team members are upset, they think that you don&#39;t understand the complex
 [[It&#39;s not too late to keep the meeting|Keep Meeting]] </tw-passagedata><tw-passagedata pid="24" name="Keep Meeting" tags="" position="1289,922" size="100,100">{(set: $allocation to it + 1)}
 The meeting is on the calendar, everyone knows when the meeting is and how to get there. You set up a Zoom call, everyone should be in good shape.
 
-There are another 3 days left. 
+There is a week left before the meeting. 
+
 [[You think the meeting will run smoothly, you want to show respect by acknowledging everyone&#39;s professionalism | No agenda]]
 [[You will lead the meeting, you have your notes, and you will all come up with a plan at the meeting; an agenda would be too imposing| No agenda]]
 [[You develop an agenda for the meeting and circulate this agenda a week before the meeting and then again two days before, giving folks an opportunity to be prepared -&gt;Meeting Prep]] 
 </tw-passagedata><tw-passagedata pid="25" name=" No agenda" tags="" position="1282,1139" size="100,100">{(set: $communication to it - 2)}
-&quot;Even though they are professionals, it this team needs some support. There are some different ideas about who is responsible and what is needed. This has the potential to go nowhere fast. Which will only harm Sam.&quot;
-
+Even though they are professionals, it this team needs some support. There are some different ideas about who is responsible and what is needed. This has the potential to go nowhere fast. Which will only harm Sam.
 [[You really need an agenda -&gt;Meeting Prep]] 
 </tw-passagedata><tw-passagedata pid="26" name=" Agenda" tags="" position="1503,1127" size="100,100">{(set: $communication to it + 1)
 (set: $allocation to it + 1)
 }
-Everyone shows up to the meeting and you are relieved and hopeful that the best solution will come out of it! Oh wait, the whole crew is here, even the two people who initially declined. This is good news, but you will need to accommodate them. Are they prepared? What is their case?
-
+Since everyone is here at the meeting, you are relieved and hopeful that the best solution will come out of it! Oh wait, the whole crew is here, even the two people who initially declined. This is good news, but you will need to accommodate them. Are they prepared? What is their case?
 
 [[You now have to let everyone in the room state or restate their issues and then try to get to formulate a plan | State issues]]
+
 [[You start out by letting everyone know that they are all here because they have the best interests in Sam in mind and want whats best for her, even if you all have different ideas about what that is. | Now what]]
+
 [[Start introductions by going around the table. | No shared understanding]]</tw-passagedata><tw-passagedata pid="27" name=" State issues" tags="" position="1343,1271" size="100,100">{(set: $allocation to it - 2)}
-These people are passionate and also they can talk! 
+These people are passionate and *they surely can talk*! 
+
 Even with 90 minutes allotted, you are running out of time. Soon, the students at the home where the meeting is being held are returning and you are in the rec room! Panic?! No, you need to regroup and get to formulate a plan.
 
-[[You quickly add time for problem-solving and refocus the team|Refocus]]</tw-passagedata><tw-passagedata pid="28" name=" Now what" tags="" position="1541,1287" size="100,100">Now you move on to:
+[[You quickly move to the problem-solving part of the agenda and refocus the team|Refocus]]</tw-passagedata><tw-passagedata pid="28" name=" Now what" tags="" position="1541,1287" size="100,100">Now you move on to:
+
 [[Introductions, let folks go for it. | Defensive]]
+
 [[Introductions, but asking folks to overview what their agency does, how it currently is supporting Sam and what it can do differently, what type of resources it can offer her.|Terrific 1]]</tw-passagedata><tw-passagedata pid="29" name=" No shared understanding" tags="" position="1756,1123" size="100,100">{(set: $communication to it - 1)}
 You could start introductions, but is there a shared understanding of what is happening here? 
 
@@ -342,10 +368,11 @@ You ask folks to overview what their agency does, how it currently is supporting
 
 Great job $name, you&#39;ve ensured that three main needs of interprofessional collaboration (effective communication, enhancement of knowledge or skills, and resource allocation), as laid out in Darlington and Feeney (2008), are met! 
 
-(if: $communication &gt; $knowledge and $allocation)[Your strongest area of collaboration was in Communication]
-(elseif: $knowledge &gt; $communication and $allocation)[Your strongest area of collaboration was in Enhancement of Knowledge or Skills]
-(elseif: $allocation &gt; $communication and $knowledge)[Your strongest area of collaboration was in resource allocation]
-(else:)[You showed strength in all 3 areas of interprofessional collaboration!]</tw-passagedata><tw-passagedata pid="32" name=" Defensive" tags="" position="1722,1450" size="100,100">{(set: $communication to it - 1)}
+
+(if: $communication &gt; $knowledge and $allocation)[Your strongest area of collaboration was in *Communication*]
+(elseif: $knowledge &gt; $communication and $allocation)[Your strongest area of collaboration was in *Enhancement of Knowledge or Skills*]
+(elseif: $allocation &gt; $communication and $knowledge)[Your strongest area of collaboration was in *Resource Allocation*]
+(else:)[You showed strength in *all 3 areas of interprofessional collaboration*!]</tw-passagedata><tw-passagedata pid="32" name=" Defensive" tags="" position="1722,1450" size="100,100">{(set: $communication to it - 1)}
 The first few folks go just give their names and the agency they work for. Then when you get the GAL they jump into why this isn&#39;t a good placement and how she thinks the facility should be shut down. The room instantly becomes defensive and at the end of the meeting there are no next steps in place no decision has been made.
 
 [[Quick! Regroup! |Refocus]]</tw-passagedata><tw-passagedata pid="33" name="Clinician Perspective" tags="" position="1109,1065" size="100,100">{(set: $knowledge to it + 1)}
@@ -353,11 +380,14 @@ Double-click this passage to edit it.
 
 [[Return -&gt; Perspectives]] </tw-passagedata><tw-passagedata pid="34" name="Meeting Prep" tags="" position="1484,976" size="100,100">{(set: $prof to (a: &quot;Clinician&quot;, &quot;Group home director&quot;, &quot;Guardian ad litem&quot;, &quot;DCF Case Manager&quot;, &quot;DMH Case Manager&quot;, &quot;Outpatient Clinician&quot;))
 }
-Five minutes before the meeting starts, the attendees start to arrive in the waiting room. Everyone shows up! Even the two that had initially declined. 
-You check your inbox for more information and see that they sent you a last minute email with additions to the agenda and their perspectives.
+Five minutes before the meeting starts, the attendees start to arrive in the waiting room. *Everyone* shows up! Even the two people who had initially declined.
+
+You check your inbox for more information and see if they sent you a last minute email with additions to the agenda and their perspectives.
+
 You hope this will result in a better outcome for Sam, but it also will effect how you run the meeting. What do you decide to do for last minute preparation?
 
 [[Review the perspectives of the two additional members -&gt; Perspectives]] 
+
 [[You take a breather and relax. Your agenda can handle this -&gt; Agenda]] </tw-passagedata><tw-passagedata pid="35" name="Startup" tags="startup" position="408,41" size="100,100">{
 (set: $communication to 0)
 (set: $knowledge to 0)
